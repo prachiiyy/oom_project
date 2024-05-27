@@ -55,7 +55,6 @@ class Game extends Frame implements ActionListener {
 
 	Game() {
 		super("9 Box-Puzzle ");
-		// =========================================================
 
 		int flag1 = 0;
 		for (int i = 0; i < getCd.length() - 1; i++) {
@@ -72,7 +71,6 @@ class Game extends Frame implements ActionListener {
 		path_1 = getCd;
 		System.out.println(path_1);
 
-		// ===================================================================================
 		moves = 1;
 
 		JOptionPane.showMessageDialog(frame,
@@ -94,7 +92,8 @@ class Game extends Frame implements ActionListener {
 		p2 = new Panel();
 		p2.setSize(800, 800);
 		p2.setLayout(new GridLayout(3, 3, 4, 4));
-		// ==========================================================
+
+		
 		Color randomColor = new Color(173, 216, 230);
 		// Color randomColor = new Color(255, 255, 255);
 		p2.setBackground(randomColor);
@@ -149,11 +148,6 @@ class Game extends Frame implements ActionListener {
 	}
 
 	class myWindowAdapter extends WindowAdapter {
-		/*
-		 * public void windowClosing(WindowEvent we) {
-		 * 
-		 * System.exit(0); }
-		 */
 		public void windowClosing(WindowEvent e) {
 			int confirmed = JOptionPane.showConfirmDialog(null, "Are you sure you want to exit the game?",
 					"9 Box-Puzzle", JOptionPane.YES_NO_OPTION);
@@ -318,7 +312,7 @@ class Game extends Frame implements ActionListener {
 			l1.setText(str);
 			JOptionPane.showMessageDialog(frame, "WIN!!\n\nYou Win.\n\n", "9 Box-Puzzle", JOptionPane.PLAIN_MESSAGE);
 
-			// ========================
+			
 			try {
 				String x = Integer.toString(moves) + " " + name + "\n";
 				BufferedWriter out = new BufferedWriter(new FileWriter(path_1, true));
@@ -480,16 +474,3 @@ class Game extends Frame implements ActionListener {
 		}
 	}
 }
-	// public void playAudio() throws Exception {
-	// AudioInputStream audioInputStream;
-	// String audioPath = getCd + "/audio.mp3";
-	// audioInputStream = AudioSystem.getAudioInputStream(new
-	// File(audioPath).getAbsoluteFile());
-	// Clip clip;
-	// clip = AudioSystem.getClip();
-	// // open audioInputStream to the clip
-	// clip.open(audioInputStream);
-	// clip.loop(Clip.LOOP_CONTINUOUSLY);
-	// clip.start();
-	// // clip.close();
-	// }
